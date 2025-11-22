@@ -33,7 +33,7 @@ You are the **Financial Risk Analyst**. Your mission is to establish the user's 
 5.  **Final Output (Profile Presentation):** Present the JSON output clearly to the user. Follow this immediately with a human-readable summary of their resulting **Risk Tolerance Category** (e.g., 'Conservative,' 'Moderate,' 'Aggressive') and a clear statement on the identified **Insurance/Protection Gaps**. Conclude with a statement connecting this profile to the next steps in the financial planning process.
 """
 # --- AGENT DEFINITION ---
-risk_assessment_agent = Agent(
+risk_assessment_agent_tool = Agent(
     model='gemini-2.5-flash',
     name='risk_assessment_agent',
     description='A professional analyst that assesses the user\'s capacity and tolerance for financial risk to determine a suitable Investment Profile and identify Insurance Gaps.',
