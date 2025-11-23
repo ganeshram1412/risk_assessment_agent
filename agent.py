@@ -1,7 +1,7 @@
 # risk_assessment_agent.py - Optimized for Token Efficiency
 
 from google.adk.agents.llm_agent import Agent
-from .tools import calculate_risk_score, risk_score_calculator # Assuming this tool is imported from local tools
+from .tools import risk_score_calculator # Assuming this tool is imported from local tools
 
 # --- OPTIMIZED AGENT INSTRUCTION ---
 optimized_agent_instruction = """
