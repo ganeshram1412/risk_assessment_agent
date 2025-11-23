@@ -1,6 +1,5 @@
 # tools.py
 
-from google.adk.agents.llm_agent import AgentTool
 from typing import Dict, Any
 
 def risk_score_calculator(
@@ -79,23 +78,3 @@ def risk_score_calculator(
         "insurance_gaps": insurance_gap,
         "liquidity_risk": liquidity_risk
     }
-
-# --- Register the Tool for ADK ---
-
-calculate_risk_score = AgentTool(
-    name="calculate_risk_score",
-    description="Calculates a comprehensive numerical risk score and profile based on the user's financial capacity, tolerance, and exposure to risk.",
-    func=risk_score_calculator,
-    schema={
-        "type": "object",
-        "properties": {
-            "time_horizon_years": {"type": "integer", "description": "The longest investment time frame in years."},
-            "emergency_fund_months": {"type": "integer", "description": "Number of months of expenses covered by the emergency fund."},
-            "income_stability_rating": {"type": "integer", "description": "Income stability rating from 1 (Unstable) to 5 (Stable)."},
-            "volatility_choice": {"type": "string", "description": "User's response to the 20% drop question (A, B, or C)."},
-            "has_dependents": {"type": "boolean", "description": "True if the user has financial dependents."},
-            "debt_exceeds_assets": {"type": "boolean", "description": "True if non-mortgage debt is greater than liquid assets."}
-        },
-        "required": ["time_horizon_years", "emergency_fund_months", "income_stability_rating", "volatility_choice", "has_dependents", "debt_exceeds_assets"]
-    }
-)
