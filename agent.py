@@ -1,4 +1,27 @@
-# risk_assessment_agent.py - FSO Integrated and Age-Aware
+"""
+risk_assessment_agent.py
+========================
+
+This module defines the **Risk Assessment Agent**, a fully FSO-integrated 
+component responsible for determining the user's investment risk profile.
+
+The agent performs a hybrid assessment combining:
+- **Objective factors** extracted from the Financial State Object (FSO)
+  (e.g., age, retirement status, emergency fund coverage, debt levels).
+- **Subjective (qualitative) behavioral traits**, such as market reaction 
+  and income stability, collected interactively.
+
+The agent's final responsibility is to call the `risk_score_calculator` tool 
+with all required parameters, interpret its output, and update the FSO under 
+the key `'risk_assessment_data'`.
+
+This module enables:
+- Comprehensive profiling combining tolerance + capacity + risk behavior.
+- Tailoring based on life stage (Working vs Retired).
+- Clean, single-response updates to the FSO via the ADK-defined Agent interface.
+
+No natural-language explanation should be returned outside the final updated FSO.
+"""
 
 from google.adk.agents.llm_agent import Agent
 from .tools import risk_score_calculator 
