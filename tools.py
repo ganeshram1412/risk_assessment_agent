@@ -53,14 +53,14 @@ def risk_score_calculator(
     time_horizon_years : int
         The user's investment time horizon (in years).  
         - >= 15 years  → More aggressive capacity  
-        -   5–14 years → Moderate capacity  
+        -   5-14 years → Moderate capacity  
         -   < 5 years  → Conservative capacity  
 
     emergency_fund_months : int
         Number of months the client can sustain expenses using emergency funds.  
         Thresholds:  
         - >= 6 months → Strong buffer  
-        - 3–5 months → Moderate buffer  
+        - 3-5 months → Moderate buffer  
         - < 3 months → Weak buffer  
 
     income_stability_rating : int  
@@ -89,7 +89,7 @@ def risk_score_calculator(
     Dict[str, Any]:
         {
             "raw_risk_score": int,
-                Numerical score (0–100 scale approximation).
+                Numerical score (0-100 scale approximation).
             
             "risk_profile": str,
                 One of: "Conservative", "Moderate", "Aggressive".

@@ -25,7 +25,6 @@ No natural-language explanation should be returned outside the final updated FSO
 
 from google.adk.agents.llm_agent import Agent
 from .tools import risk_score_calculator 
-import json 
 
 # --- OPTIMIZED AGENT INSTRUCTION (FSO Integrated) ---
 optimized_agent_instruction = """
